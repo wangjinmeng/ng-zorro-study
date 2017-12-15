@@ -1,0 +1,54 @@
+<nz-layout style="position:absolute; top: 0; bottom:0; width: 100%">
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null" nzBreakpoint="sm">
+      <ul nz-menu [nzMode]="'inline'" nzTheme='dark' [nzInlineCollapsed]="isCollapsed">
+        <li nz-menu-item>
+          <span title>
+            <i class="anticon anticon-mail"></i>
+            <span>邮箱</span>
+          </span>
+        </li>
+        <li nz-submenu [nzOpen]="true">
+          <span title>
+            <i class="anticon anticon-setting"></i>
+            <span>小部件</span>
+          </span>
+          <ul>
+            <li nz-menu-item><a routerLink="btn">按钮</a></li>
+            <li nz-menu-item><a routerLink="pageBar">分页</a></li>
+            <li nz-menu-item><a routerLink="grid">栅格</a></li>
+          </ul>
+        </li>
+      </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header style="background: #fff; padding:0;">
+      <ul nz-menu [nzMode]="'horizontal'">
+        <li nz-menu-item class="trigger"  (click)="isCollapsed=!isCollapsed;mode=!mode">
+          <i class="anticon  anticon-menu-unfold "
+             [class.anticon-menu-fold]="isCollapsed"
+             [class.anticon-menu-unfold]="!isCollapsed"></i>
+        </li>
+        <li nz-menu-item class="trigger">
+          <i class="anticon anticon-search"></i>
+        </li>
+      </ul>
+    </nz-header>
+    <nz-content style="padding:0 16px; overflow: auto;">
+      <nz-breadcrumb style="margin:12px 0;" >
+        <nz-breadcrumb-item>
+          <a>
+            <i class="anticon anticon-home"></i>
+            首页
+          </a>
+        </nz-breadcrumb-item>
+        <nz-breadcrumb-item>
+          {{subTitleName}}
+        </nz-breadcrumb-item>
+      </nz-breadcrumb>
+      <div style="min-height: 360px;">
+        <router-outlet  (activate)="onActivate($event)" (deactivate)="onDeactivate($event)"></router-outlet>
+      </div>
+    </nz-content>
+    <nz-footer style="text-align: center;">Ant Design ©2017 Implement By Angular</nz-footer>
+  </nz-layout>
+</nz-layout>
