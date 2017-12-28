@@ -1,0 +1,221 @@
+<div nz-row [nzGutter]="24">
+  <div nz-col nzSpan="6">
+    <nz-card>
+      <ng-template #title>基本</ng-template>
+      <ng-template #body>
+        <nz-dropdown>
+          <a class="ant-dropdown-link" nz-dropdown>
+            Hover Me <i class="anticon anticon-down"></i>
+          </a>
+          <ul nz-menu>
+            <li nz-menu-item>
+              <a target="_blank" rel="noopener noreferrer">1st menu item</a>
+              <a target="_blank" rel="noopener noreferrer">2nd menu item</a>
+              <a target="_blank" rel="noopener noreferrer">3rd menu item</a>
+            </li>
+          </ul>
+        </nz-dropdown>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="6">
+    <nz-card>
+      <ng-template #title>分割线和不可用菜单项</ng-template>
+      <ng-template #body>
+        <nz-dropdown>
+          <button nz-button nz-dropdown>按钮</button>
+          <ul nz-menu>
+            <li nz-menu-item>
+              <a rel="noopener noreferer">1st menu item</a>
+            </li>
+            <li nz-menu-item>
+              <a rel="noopener noreferer">2nd menu item</a>
+            </li>
+            <li nz-menu-divider></li>
+            <li nz-menu-item nzDisable>
+              3rd menu item（disabled）
+            </li>
+          </ul>
+        </nz-dropdown>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="6">
+    <nz-card>
+      <ng-template #title>触发事件</ng-template>
+      <ng-template #body>
+        <nz-dropdown nzTrigger="click">
+          <a  class="ant-dropdown-link" nz-dropdown>
+            Click me <i class="anticon anticon-down"></i>
+          </a>
+          <ul nz-menu>
+            <li nz-menu-item>1st menu item</li>
+            <li nz-menu-item>2nd menu item</li>
+            <li nz-menu-item>3rd menu item</li>
+          </ul>
+        </nz-dropdown>
+        <nz-dropdown nzTrigger="hover">
+          <a  class="ant-dropdown-link" nz-dropdown>
+            hover me <i class="anticon anticon-down"></i>
+          </a>
+          <ul nz-menu>
+            <li nz-menu-item>1st menu item</li>
+            <li nz-menu-item>2nd menu item</li>
+            <li nz-menu-item>3rd menu item</li>
+          </ul>
+        </nz-dropdown>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="6">
+    <nz-card>
+      <ng-template #title>多级菜单</ng-template>
+      <ng-template #body>
+        <nz-dropdown>
+          <a class="ant-dropdown-link" nz-dropdown>
+            多级菜单 <i class="anticon anticon-down"></i>
+          </a>
+          <ul nz-menu>
+            <li nz-menu-item>1st menu item</li>
+            <li nz-menu-item>2nd menu item</li>
+            <li nz-submenu>
+              <span title>sub menu</span>
+              <ul>
+                <li nz-menu-item>3rd menu item</li>
+                <li nz-menu-item>4th menu item</li>
+              </ul>
+            </li>
+          </ul>
+        </nz-dropdown>
+      </ng-template>
+    </nz-card>
+  </div>
+</div>
+<div nz-row [nzGutter]="24">
+  <div nz-col nzSpan="12">
+    <nz-card>
+      <ng-template #title>弹出位置</ng-template>
+      <ng-template #body>
+        <nz-dropdown nzPlacement="bottomLeft">
+          <button nz-button nz-dropdown>bottomLeft</button>
+          <ul nz-menu>
+            <li nz-menu-item>
+              <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">1st menu item length</a>
+            </li>
+            <li nz-menu-item>
+              <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">2nd menu item length</a>
+            </li>
+            <li nz-menu-item>
+              <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">3rd menu item length</a>
+            </li>
+          </ul>
+        </nz-dropdown>
+        <nz-dropdown nzPlacement="bottomCenter">
+          <button nz-button nz-dropdown>bottomCenter</button>
+          <ul nz-menu>
+            <li nz-menu-item>
+              <a target="_blank" rel="noopener noreferrer">1st menu item length</a>
+            </li>
+            <li nz-menu-item>
+              <a target="_blank" rel="noopener noreferrer">2nd menu item length</a>
+            </li>
+            <li nz-menu-item>
+              <a target="_blank" rel="noopener noreferrer">3rd menu item length</a>
+            </li>
+          </ul>
+        </nz-dropdown>
+        <nz-dropdown nzPlacement="bottomRight">
+          <button nz-button nz-dropdown>bottomRight</button>
+          <ul nz-menu>
+            <li nz-menu-item>
+              <a target="_blank" rel="noopener noreferrer">1st menu item length</a>
+            </li>
+            <li nz-menu-item>
+              <a target="_blank" rel="noopener noreferrer">2nd menu item length</a>
+            </li>
+            <li nz-menu-item>
+              <a target="_blank" rel="noopener noreferrer">3rd menu item length</a>
+            </li>
+          </ul>
+        </nz-dropdown>
+        <nz-dropdown nzPlacement="topLeft">
+          <button nz-button nz-dropdown>topLeft</button>
+          <ul nz-menu>
+            <li nz-menu-item>
+              <a target="_blank" rel="noopener noreferrer">1st menu item length</a>
+            </li>
+            <li nz-menu-item>
+              <a target="_blank" rel="noopener noreferrer">2nd menu item length</a>
+            </li>
+            <li nz-menu-item>
+              <a target="_blank" rel="noopener noreferrer">3rd menu item length</a>
+            </li>
+          </ul>
+        </nz-dropdown>
+        <nz-dropdown nzPlacement="topCenter">
+          <button nz-button nz-dropdown>topCenter</button>
+          <ul nz-menu>
+            <li nz-menu-item>
+              <a target="_blank" rel="noopener noreferrer">1st menu item length</a>
+            </li>
+            <li nz-menu-item>
+              <a target="_blank" rel="noopener noreferrer">2nd menu item length</a>
+            </li>
+            <li nz-menu-item>
+              <a target="_blank" rel="noopener noreferrer">3rd menu item length</a>
+            </li>
+          </ul>
+        </nz-dropdown>
+        <nz-dropdown nzPlacement="topRight">
+          <button nz-button nz-dropdown>topRight</button>
+          <ul nz-menu>
+            <li nz-menu-item>
+              <a target="_blank" rel="noopener noreferrer">1st menu item length</a>
+            </li>
+            <li nz-menu-item>
+              <a target="_blank" rel="noopener noreferrer">2nd menu item length</a>
+            </li>
+            <li nz-menu-item>
+              <a target="_blank" rel="noopener noreferrer">3rd menu item length</a>
+            </li>
+          </ul>
+        </nz-dropdown>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="12">
+    <nz-card>
+      <ng-template #title>带下拉框的按钮</ng-template>
+      <ng-template #body>
+        <nz-dropdown-button>
+          DropDown
+          <ul nz-menu>
+            <li nz-menu-item>item1</li>
+            <li nz-menu-item>item2</li>
+            <li nz-menu-item>item3</li>
+          </ul>
+        </nz-dropdown-button>
+        <nz-dropdown-button nzDisabled>
+          DropDown
+          <ul nz-menu>
+            <li nz-menu-item>item1</li>
+            <li nz-menu-item>item2</li>
+            <li nz-menu-item>item3</li>
+          </ul>
+        </nz-dropdown-button>
+        <nz-dropdown>
+          <button nz-button nz-dropdown>
+            DropDown
+            <i class="anticon anticon-down"></i>
+          </button>
+          <ul nz-menu>
+            <li nz-menu-item>item1</li>
+            <li nz-menu-item>item2</li>
+            <li nz-menu-item>item3</li>
+          </ul>
+        </nz-dropdown>
+      </ng-template>
+    </nz-card>
+  </div>
+</div>
+

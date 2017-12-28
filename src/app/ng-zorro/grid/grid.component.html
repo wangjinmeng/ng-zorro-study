@@ -1,0 +1,253 @@
+<nz-card>
+  <ng-template #title>基础布局</ng-template>
+  <ng-template #body>
+    <div nz-row class="box">
+      <div nz-col nzSpan="4" class="gray">nz-col-4</div>
+      <div nz-col nzSpan="4" class="green">nz-col-4</div>
+      <div nz-col nzSpan="4" class="gray">nz-col-4</div>
+      <div nz-col nzSpan="4" class="green">nz-col-4</div>
+      <div nz-col nzSpan="4" class="gray">nz-col-4</div>
+      <div nz-col nzSpan="4" class="green">nz-col-4</div>
+    </div>
+    <div nz-row class="box">
+      <div nz-col nzSpan="6" class="gray">nz-col-6</div>
+      <div nz-col nzSpan="6" class="green">nz-col-6</div>
+      <div nz-col nzSpan="6" class="gray">nz-col-6</div>
+      <div nz-col nzSpan="6" class="green">nz-col-6</div>
+    </div>
+    <div nz-row class="box">
+      <div nz-col nzSpan="8" class="gray">nz-col-8</div>
+      <div nz-col nzSpan="8" class="green">nz-col-8</div>
+      <div nz-col nzSpan="8" class="gray">nz-col-8</div>
+    </div>
+    <div nz-row class="box">
+      <div nz-col nzSpan="12" class="gray">nz-col-12</div>
+      <div nz-col nzSpan="12" class="green">nz-col-12</div>
+    </div>
+    <div nz-row class="box">
+      <div nz-col nzSpan="24" class="gray">nz-col-24</div>
+    </div>
+  </ng-template>
+</nz-card>
+<nz-card>
+  <ng-template #title>区块间隔</ng-template>
+  <ng-template #body>
+    <div class="box" nz-row  [nzGutter]="8">
+      <div nz-col  nzSpan="6">
+        <div class="gray">col-6</div>
+      </div>
+      <div nz-col nzSpan="6">
+        <div class="green">col-6</div>
+      </div>
+      <div nz-col nzSpan="6">
+        <div class="gray">col-6</div>
+      </div>
+      <div nz-col  nzSpan="6">
+        <div class="green">col-6</div>
+      </div>
+    </div>
+    <div class="box" nz-row  [nzGutter]="16">
+      <div nz-col  nzSpan="6">
+        <div class="gray">col-6</div>
+      </div>
+      <div nz-col nzSpan="6">
+        <div class="green">col-6</div>
+      </div>
+      <div nz-col nzSpan="6">
+        <div class="gray">col-6</div>
+      </div>
+      <div nz-col  nzSpan="6">
+        <div class="green">col-6</div>
+      </div>
+    </div>
+    <div class="box" nz-row  [nzGutter]="24">
+      <div nz-col  nzSpan="6">
+        <div class="gray">col-6</div>
+      </div>
+      <div nz-col nzSpan="6">
+        <div class="green">col-6</div>
+      </div>
+      <div nz-col nzSpan="6">
+        <div class="gray">col-6</div>
+      </div>
+      <div nz-col  nzSpan="6">
+        <div class="green">col-6</div>
+      </div>
+    </div>
+    <div class="box" nz-row  [nzGutter]="32">
+      <div nz-col  nzSpan="6">
+        <div class="gray">col-6</div>
+      </div>
+      <div nz-col nzSpan="6">
+        <div class="green">col-6</div>
+      </div>
+      <div nz-col nzSpan="6">
+        <div class="gray">col-6</div>
+      </div>
+      <div nz-col  nzSpan="6">
+        <div class="green">col-6</div>
+      </div>
+    </div>
+    <div class="box" nz-row  [nzGutter]="40">
+      <div nz-col  nzSpan="6">
+        <div class="gray">col-6</div>
+      </div>
+      <div nz-col nzSpan="6">
+        <div class="green">col-6</div>
+      </div>
+      <div nz-col nzSpan="6">
+        <div class="gray">col-6</div>
+      </div>
+      <div nz-col  nzSpan="6">
+        <div class="green">col-6</div>
+      </div>
+    </div>
+  </ng-template>
+</nz-card>
+<nz-card>
+  <ng-template #title>左右便宜</ng-template>
+  <ng-template #body>
+    <div nz-row class="box">
+      <div nz-col nzSpan="6" [nzOffset]="6" class="green">
+        col-6
+      </div>
+      <div nz-col nzSpan="6" [nzOffset]="6" class="gray">
+        col-6
+      </div>
+    </div>
+    <div nz-row class="box">
+      <div class="gray" nz-col nzSpan="8" nzOffset="8"> col-8 offset-8</div>
+    </div>
+    <div nz-row class="box">
+      <div class="gray" nz-col  nzSpan="12" nzOffset="12"> col-12 offset-12</div>
+    </div>
+  </ng-template>
+</nz-card>
+<nz-card>
+  <ng-template #title>布局和排序</ng-template>
+  <ng-template #body>
+    <div class="box" nz-row>
+      <div class="gray" nz-col nzSpan="18" [nzPush]="6">col-12 nz-push-6</div>
+    </div>
+    <div class="box" nz-row>
+      <div class="gray" nz-col nzSpan="18" [nzPush]="6">col-6 nz-pull-18</div>
+      <div class="green" nz-col nzSpan="6" [nzPull]="18">col-12 nz-push-6</div>
+    </div>
+  </ng-template>
+</nz-card>
+<nz-card>
+  <ng-template #title>Flex布局</ng-template>
+  <ng-template #body>
+    <h3>nzJustify="start"</h3>
+    <div class="box" nz-row nzType="flex" nzJustify="start">
+      <div nz-col class="gray" nzSpan="4">col-4</div>
+      <div nz-col class="green" nzSpan="4">col-4</div>
+      <div nz-col class="gray" nzSpan="4">col-4</div>
+      <div nz-col class="green" nzSpan="4">col-4</div>
+    </div>
+    <h3>nzJustify="center"</h3>
+    <div class="box" nz-row nzType="flex" nzJustify="center">
+      <div nz-col class="gray" nzSpan="4">col-4</div>
+      <div nz-col class="green" nzSpan="4">col-4</div>
+      <div nz-col class="gray" nzSpan="4">col-4</div>
+      <div nz-col class="green" nzSpan="4">col-4</div>
+    </div>
+    <h3>nzJustify="end"</h3>
+    <div class="box" nz-row nzType="flex" nzJustify="end">
+      <div nz-col class="gray" nzSpan="4">col-4</div>
+      <div nz-col class="green" nzSpan="4">col-4</div>
+      <div nz-col class="gray" nzSpan="4">col-4</div>
+      <div nz-col class="green" nzSpan="4">col-4</div>
+    </div>
+    <h3>nzJustify="space-around"</h3>
+    <div class="box" nz-row nzType="flex" nzJustify="space-between">
+      <div nz-col class="gray" nzSpan="4">col-4</div>
+      <div nz-col class="green" nzSpan="4">col-4</div>
+      <div nz-col class="gray" nzSpan="4">col-4</div>
+      <div nz-col class="green" nzSpan="4">col-4</div>
+    </div>
+    <h3>nzJustify="space-around"</h3>
+    <div class="box" nz-row nzType="flex" nzJustify="space-around">
+      <div nz-col class="gray" nzSpan="4">col-4</div>
+      <div nz-col class="green" nzSpan="4">col-4</div>
+      <div nz-col class="gray" nzSpan="4">col-4</div>
+      <div nz-col class="green" nzSpan="4">col-4</div>
+    </div>
+  </ng-template>
+</nz-card>
+<nz-card>
+  <ng-template #title>Flex对齐</ng-template>
+  <ng-template #body>
+    <h3>ngAlign="top"</h3>
+    <div class="box" nz-row nzType="flex" nzJustify="center" [nzAlign]="'top'">
+      <div class="gray" nz-col nzSpan="4" style="height: 200px;"></div>
+      <div class="green" nz-col nzSpan="4" style="height: 100px;"></div>
+      <div class="gray" nz-col nzSpan="4" style="height: 200px;"></div>
+      <div class="green" nz-col nzSpan="4" style="height: 100px;"></div>
+    </div>
+    <h3>ngAlign="middle"</h3>
+    <div class="box" nz-row nzType="flex" nzJustify="center" [nzAlign]="'middle'">
+      <div class="gray" nz-col nzSpan="4" style="height: 200px;"></div>
+      <div class="green" nz-col nzSpan="4" style="height: 100px;"></div>
+      <div class="gray" nz-col nzSpan="4" style="height: 200px;"></div>
+      <div class="green" nz-col nzSpan="4" style="height: 100px;"></div>
+    </div>
+    <h3>ngAlign="bottom"</h3>
+    <div class="box" nz-row nzType="flex" nzJustify="center" [nzAlign]="'bottom'">
+      <div class="gray" nz-col nzSpan="4" style="height: 200px;"></div>
+      <div class="green" nz-col nzSpan="4" style="height: 100px;"></div>
+      <div class="gray" nz-col nzSpan="4" style="height: 200px;"></div>
+      <div class="green" nz-col nzSpan="4" style="height: 100px;"></div>
+    </div>
+  </ng-template>
+</nz-card>
+<nz-card>
+  <ng-template #title>Flex 排序</ng-template>
+  <ng-template #body>
+    <h3>nzType="flex"</h3>
+    <div class="box" nz-row nzType="flex">
+      <div class="gray" nz-col nzSpan="8" [nzOrder]="3">1 nz-order-3 </div>
+      <div class="green" nz-col nzSpan="8" [nzOrder]="2">2 nz-order-2 </div>
+      <div class="gray" nz-col nzSpan="8" [nzOrder]="1">3 nz-order-1</div>
+    </div>
+    <h3>默认值</h3>
+    <div class="box" nz-row nzType="flex">
+      <div class="gray" nz-col nzSpan="8" [nzOrder]="3">1 nz-order-3 </div>
+      <div class="green" nz-col nzSpan="8" [nzOrder]="2">2 nz-order-2 </div>
+      <div class="gray" nz-col nzSpan="8" [nzOrder]="1">3 nz-order-1</div>
+    </div>
+  </ng-template>
+</nz-card>
+<nz-card>
+  <ng-template #title>响应式</ng-template>
+  <ng-template #body>
+    <div class="box" nz-row>
+      <div class="gray" nz-col nzSpan="2">col-2</div>
+    </div>
+    <div class="box" nz-row>
+      <div class="gray" nz-col nzSpan="4">col-4</div>
+    </div>
+    <div class="box" nz-row>
+      <div class="gray" nz-col nzSpan="6">col-6</div>
+    </div>
+    <div class="box" nz-row>
+      <div class="gray" nz-col nzSpan="8">col-8</div>
+    </div>
+    <div class="box" nz-row>
+      <div class="gray" nz-col nzSpan="10">col-10</div>
+    </div>
+    <div class="box" nz-row>
+      <div class="gray" nz-col [nzXs]="10" [nzSm]="8" [nzMd]="6" [nzLg]="4" [nzXl]="2">
+        [nzXs]="2"
+        <br>
+        [nzSm]="4"
+        <br>
+        [nzMd]="6"
+        <br>
+        [nzLg]="8"
+        <br>
+        [nzXl]="10"
+      </div>
+    </div>
+  </ng-template>
+</nz-card>

@@ -1,0 +1,108 @@
+<div nz-row>
+  <div nz-col [nzSpan]="24">
+    <nz-card>
+      <ng-template #title>类型</ng-template>
+      <ng-template #body>
+        <button nz-button [nzType]="'primary'">按钮</button>
+        <button nz-button [nzType]="'dashed'">按钮</button>
+        <button nz-button [nzType]="'default'">按钮</button>
+        <button nz-button [nzType]="'danger'">按钮</button>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col [nzSpan]="24">
+    <nz-card>
+      <ng-template #title>图标按钮</ng-template>
+      <ng-template #body>
+        <button nz-button nzType="primary" nzShape="circle">
+          <i class="anticon anticon-search"></i>
+        </button>
+        <button nz-button nzType="primary">
+          <i class="anticon anticon-search"></i>
+          搜索
+        </button>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col [nzSpan]="24">
+    <nz-card>
+      <ng-template #title>尺寸</ng-template>
+      <ng-template #body>
+        <button nz-button  nzType="primary" nzSize="large">按钮</button>
+        <button nz-button nzType="primary">按钮</button>
+        <button nz-button  nzType="primary" nzSize="small">按钮</button>
+        <button nz-button  nzType="dashed" nzSize="large">按钮</button>
+        <button nz-button nzType="dashed">按钮</button>
+        <button nz-button  nzType="dashed" nzSize="small">按钮</button>
+        <button nz-button  nzType="default" nzSize="large">按钮</button>
+        <button nz-button nzType="default">按钮</button>
+        <button nz-button  nzType="default" nzSize="small">按钮</button>
+        <button nz-button  nzType="danger" nzSize="large">按钮</button>
+        <button nz-button nzType="danger">按钮</button>
+        <button nz-button  nzType="danger" nzSize="small">按钮</button>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col [nzSpan]="24">
+    <nz-card>
+      <ng-template #title>禁用状态</ng-template>
+      <ng-template #body>
+        <button nz-button nzType="primary">按钮</button>
+        <button nz-button nzType="primary" [disabled]="true">按钮</button>
+        <br>
+        <button nz-button nzType="dashed">按钮</button>
+        <button nz-button nzType="dashed" [disabled]="true">按钮</button>
+        <br>
+        <button nz-button nzType="default">按钮</button>
+        <button nz-button nzType="default" [disabled]="true">按钮</button>
+        <br>
+        <button nz-button nzType="danger">按钮</button>
+        <button nz-button nzType="danger" [disabled]="true">按钮</button>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col [nzSpan]="24">
+    <nz-card>
+      <ng-template #title>
+        加载中状态
+      </ng-template>
+      <ng-template #body>
+        <button  nz-button nzType="primary" nzLoading>加载中</button>
+        <button nz-button nzType="primary" nzShape="circle" nzLoading></button>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col [nzSpan]="24">
+    <nz-card>
+      <ng-template #title>按钮组</ng-template>
+      <ng-template #body>
+        <nz-button-group>
+          <button nz-button nzType="primary">left</button>
+          <button nz-button nzType="primary">right</button>
+        </nz-button-group>
+        <nz-button-group>
+          <button nz-button nzType="default">left</button>
+          <button nz-button nzType="primary">right</button>
+        </nz-button-group>
+        <nz-button-group>
+          <button nz-button nzType="default" disabled>left</button>
+          <button nz-button nzType="default">middle</button>
+          <button nz-button nzType="primary" disabled>right</button>
+        </nz-button-group>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col [nzSpan]="24">
+    <nz-card>
+      <ng-template #title>反色按钮</ng-template>
+      <ng-template #body>
+        <div style="background:#000;padding: 20px;">
+          <button nz-button nzType="primary" nzGhost>按钮</button>
+          <button nz-button nzType="dashed" nzGhost>按钮</button>
+          <button nz-button nzType="default" nzGhost>按钮</button>
+          <button nz-button nzType="danger" nzGhost>按钮</button>
+        </div>
+      </ng-template>
+    </nz-card>
+  </div>
+</div>

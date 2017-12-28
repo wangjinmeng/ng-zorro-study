@@ -1,0 +1,35 @@
+<div nz-row [nzGutter]="24" nzType="flex" nzAlign="middle">
+  <div nz-col nzXs="12" nzMd="6">
+    <nz-card>
+      <ng-template #title>基本用法</ng-template>
+      <ng-template #body>
+        <nz-rate [(ngModel)]="rateNum"></nz-rate>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzXs="12" nzMd="6">
+    <nz-card>
+      <ng-template #title>半星</ng-template>
+      <ng-template #body>
+        <nz-rate [nzAllowHalf]="true" [(ngModel)]="halfRateNum"></nz-rate>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzXs="12" nzMd="6">
+    <nz-card>
+      <ng-template #title>文案</ng-template>
+      <ng-template #body>
+        <nz-rate [(ngModel)]="halfRateNum"></nz-rate>
+        <span class="ant-rate-text">{{halfRateNum}} 星</span>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzXs="12" nzMd="6">
+    <nz-card>
+      <ng-template #title>只读</ng-template>
+      <ng-template #body>
+        <nz-rate [(ngModel)]="halfRateNum" nzDisabled></nz-rate>
+      </ng-template>
+    </nz-card>
+  </div>
+</div>

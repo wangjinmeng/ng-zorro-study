@@ -1,0 +1,150 @@
+<div nz-row [nzGutter]="24" nzType="flex" nzAlign="middle">
+  <div nz-col nzXs="12" nzMd="8">
+    <nz-card>
+      <ng-template #title>基本用法</ng-template>
+      <ng-template #body>
+        <nz-input [(ngModel)]="basicInput" [nzPlaceHolder]="'basic input'" (ngModelChange)="_console('basicInput',$event)"></nz-input>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzXs="12" nzMd="8">
+    <nz-card>
+      <ng-template #title>三种大小</ng-template>
+      <ng-template #body>
+        <nz-input [(ngModel)]="basicInput" [nzPlaceHolder]="'large size'" nzSize="large"></nz-input>
+        <br>
+        <br>
+        <nz-input [(ngModel)]="basicInput" [nzPlaceHolder]="'normal size'"></nz-input>
+        <br>
+        <br>
+        <nz-input [(ngModel)]="basicInput" [nzPlaceHolder]="'small size'" nzSize="small"></nz-input>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzXs="12" nzMd="8">
+    <nz-card>
+      <ng-template #title>前置/后置标签</ng-template>
+      <ng-template #body>
+        <nz-input [(ngModel)]="basicInput" nzPlaceHolder="前置和后置标签">
+          <ng-template #addOnBefore>http://</ng-template>
+          <ng-template #addOnAfter>.com</ng-template>
+        </nz-input>
+        <br>
+        <nz-input [(ngModel)]="basicInput" nzPlaceHolder="前置和后置可选择标签">
+          <ng-template #addOnBefore>
+            <nz-select style="width: 70px;" [ngModel]="'http://'">
+              <nz-option [nzLabel]="'http://'" [nzValue]="'http://'"></nz-option>
+              <nz-option [nzLabel]="'https://'" [nzValue]="'https://'"></nz-option>
+            </nz-select>
+          </ng-template>
+          <ng-template #addOnAfter>
+            <nz-select style="width: 60px;" [ngModel]="'.com'">
+              <nz-option [nzLabel]="'.com'" [nzValue]="'.com'"></nz-option>
+              <nz-option [nzLabel]="'.cn'" [nzValue]="'.cn'"></nz-option>
+              <nz-option [nzLabel]="'.jp'" [nzValue]="'.jp'"></nz-option>
+              <nz-option [nzLabel]="'.org'" [nzValue]="'.org'"></nz-option>
+            </nz-select>
+          </ng-template>
+        </nz-input>
+        <br>
+        <nz-input nzPlaceHolder="带图标的后置标签">
+          <ng-template #addOnAfter>
+            <i class="anticon anticon-setting"></i>
+          </ng-template>
+        </nz-input>
+        <br>
+        <nz-input nzPlaceHolder="带图标的前置标签">
+          <ng-template #addOnBefore>
+            <i class="anticon anticon-user"></i>
+          </ng-template>
+        </nz-input>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzXs="12" nzMd="8">
+    <nz-card>
+      <ng-template #title>搜索框</ng-template>
+      <ng-template #body>
+        <nz-input nzType="search" nzPlaceHolder="搜索框"></nz-input>
+        <br>
+        <br>
+        <nz-input nzType="password" nzPlaceHolder="密码框"></nz-input>
+        <br>
+        <br>
+        <nz-input nzPlaceHolder="文本框"></nz-input>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzXs="12" nzMd="8">
+    <nz-card>
+      <ng-template #title>前缀/后缀</ng-template>
+      <ng-template #body>
+        <nz-input nzPlaceHolder="带前缀的Input">
+          <ng-template #prefix>
+            <i class="anticon anticon-user"></i>
+          </ng-template>
+        </nz-input>
+        <br>
+        <br>
+        <nz-input nzPlaceHolder="带后置的input">
+          <ng-template #suffix>
+            <i class="anticon anticon-setting"></i>
+          </ng-template>
+        </nz-input>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzXs="12" nzMd="8">
+    <nz-card>
+      <ng-template #title>文本域</ng-template>
+      <ng-template #body>
+        <nz-input nzType="textarea"></nz-input>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzXs="12" nzMd="8">
+    <nz-card>
+      <ng-template #title>自适应高度的文本域</ng-template>
+      <ng-template #body>
+        <nz-input nzType="textarea" nzAutosize></nz-input>
+        <br>
+        <br>
+        <nz-input nzType="textarea" [nzAutosize]="{minRows:2,maxRows:4}"></nz-input>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzXs="12" nzMd="8">
+    <nz-card>
+      <ng-template #title>输入框组合</ng-template>
+      <ng-template #body>
+        <nz-input-group>
+          <div nz-col nzSpan="6">
+            <input nz-input>
+          </div>
+          <div nz-col nzSpan="18">
+            <input nz-input>
+          </div>
+        </nz-input-group>
+        <br>
+        <nz-input-group nzCompact>
+            <input nz-input style="width: 25%">
+            <input nz-input style="width: 75%">
+        </nz-input-group>
+        <br>
+        <nz-input-group>
+          <input  nz-input style="width: 50%">
+          <input  nz-input style="width: 50%">
+        </nz-input-group>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="24">
+    <nz-card>
+      <ng-template #title>记录</ng-template>
+      <ng-template #body>
+        注意事项
+        1、nzType的类型有很多其中包括textarea、password、search，其中search是新增的，样子是一个带搜索图表后缀的搜索框。
+      </ng-template>
+    </nz-card>
+  </div>
+</div>

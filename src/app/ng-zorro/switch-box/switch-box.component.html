@@ -1,0 +1,47 @@
+<div nz-row [nzGutter]="24">
+  <div nz-col nzSpan="6">
+    <nz-card>
+      <ng-template #title>普通用法</ng-template>
+      <ng-template #body>
+        <nz-switch [(ngModel)]="switchValue"></nz-switch>
+        <br>
+        {{switchValue}}
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="6">
+    <nz-card>
+      <ng-template #title>禁用状态</ng-template>
+      <ng-template #body>
+        <nz-switch [nzDisabled]="switchDisabledValue"></nz-switch>
+        <br>
+        <button nz-button nzType="primary" (click)="switchDisabledValue=!switchDisabledValue">disabled</button>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="6">
+    <nz-card>
+      <ng-template #title>文字和图标</ng-template>
+      <ng-template #body>
+        <nz-switch>
+          <span checked>开</span>
+          <span unchecked>关</span>
+        </nz-switch>
+        <nz-switch>
+          <i class="anticon anticon-check" checked></i>
+          <i class="anticon anticon-cross" unchecked></i>
+        </nz-switch>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="6">
+    <nz-card>
+      <ng-template #title>大小</ng-template>
+      <ng-template #body>
+        <nz-switch nzSize="small"></nz-switch>
+        <nz-switch></nz-switch>
+      </ng-template>
+    </nz-card>
+  </div>
+
+</div>

@@ -1,0 +1,94 @@
+<div nz-row [nzGutter]="24" nzType="flex" nzAlign="middle">
+  <div nz-col nzSpan="12">
+    <nz-card>
+      <ng-template #title>组合</ng-template>
+      <ng-template #body>
+        <nz-radio-group [(ngModel)]="radioValue">
+          <label nz-radio nzValue="A">
+            <span>A</span>
+          </label>
+          <label nz-radio nzValue="B">
+            <span>B</span>
+          </label>
+          <label nz-radio nzValue="C">
+            <span>C</span>
+          </label>
+          <label nz-radio nzValue="D">
+            <span>D</span>
+          </label>
+        </nz-radio-group>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="12">
+    <nz-card>
+      <ng-template #title>禁用</ng-template>
+      <ng-template #body>
+        <nz-radio-group [(ngModel)]="radioValue">
+          <label nz-radio nzDisabled nzValue="A">
+            <span>A</span>
+          </label>
+          <label nz-radio nzDisabled nzValue="B">
+            <span>B</span>
+          </label>
+          <label nz-radio nzValue="C">
+            <span>C</span>
+          </label>
+          <label nz-radio nzValue="D">
+            <span>D</span>
+          </label>
+        </nz-radio-group>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="12">
+    <nz-card>
+      <ng-template #title>按钮样式</ng-template>
+      <ng-template #body>
+        <nz-radio-group [(ngModel)]="radioValue">
+          <label nz-radio-button nzValue="A">
+            <span>A</span>
+          </label>
+          <label nz-radio-button nzValue="B">
+            <span>B</span>
+          </label>
+          <label nz-radio-button nzValue="C">
+            <span>C</span>
+          </label>
+          <label nz-radio-button nzValue="D">
+            <span>D</span>
+          </label>
+        </nz-radio-group>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="12">
+    <nz-card>
+      <ng-template #title>尺寸</ng-template>
+      <ng-template #body>
+        <nz-radio-group nzSize="large" [(ngModel)]="radioValue">
+          <label nz-radio-button nzValue="A"><span>A</span></label>
+          <label nz-radio-button nzValue="B"><span>B</span></label>
+          <label nz-radio-button nzValue="C"><span>C</span></label>
+          <label nz-radio-button nzValue="D"><span>D</span></label>
+        </nz-radio-group>
+        <br>
+        <br>
+        <nz-radio-group [(ngModel)]="radioValue">
+          <label nz-radio-button nzValue="A"><span>A</span></label>
+          <label nz-radio-button nzValue="B"><span>B</span></label>
+          <label nz-radio-button nzValue="C"><span>C</span></label>
+          <label nz-radio-button nzValue="D"><span>D</span></label>
+        </nz-radio-group>
+        <br>
+        <br>
+        <nz-radio-group nzSize="small" [(ngModel)]="radioValue">
+          <label nz-radio-button nzValue="A"><span>A</span></label>
+          <label nz-radio-button nzValue="B"><span>B</span></label>
+          <label nz-radio-button nzValue="C"><span>C</span></label>
+          <label nz-radio-button nzValue="D"><span>D</span></label>
+        </nz-radio-group>
+      </ng-template>
+    </nz-card>
+  </div>
+</div>

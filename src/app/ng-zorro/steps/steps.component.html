@@ -1,0 +1,111 @@
+<div nz-row nzType="flex" nzJustify="space-between" nzAlign="middle">
+  <div nz-col nzSpan="24">
+     <nz-card>
+       <ng-template #title>简单</ng-template>
+       <ng-template #body>
+         <nz-steps  [(nzCurrent)]="current">
+           <nz-step [nzTitle]="'Finished'" [nzDescription]="'this is a direction'"></nz-step>
+           <nz-step [nzTitle]="'In Progress'" [nzDescription]="nzDescription">
+             <ng-template #nzDescription>
+                <p>this is a description</p>
+             </ng-template>
+           </nz-step>
+           <nz-step [nzTitle]="'waiting'" [nzDescription]="'this is a description'"></nz-step>
+         </nz-steps>
+         <br>
+         <button *ngIf="current>0" nz-button nzType="default" (click)="current=current-1;">preview</button>
+         <button *ngIf="current<2"nz-button nzType="primary" (click)="current=current+1;">next</button>
+         <button *ngIf="current==2"nz-button nzType="primary">done</button>
+       </ng-template>
+     </nz-card>
+   </div>
+  <div nz-col nzSpan="24">
+    <nz-card>
+      <ng-template #title>带图标的步骤条</ng-template>
+      <ng-template #body>
+        <nz-steps nzCurrent="2">
+            <nz-step [nzTitle]="'Login'" [nzStatus]="'finish'">
+              <ng-template #nzIcon>
+                <i class="anticon anticon-user"></i>
+              </ng-template>
+            </nz-step>
+            <nz-step [nzTitle]="'verification'" [nzStatus]="'verify'">
+              <ng-template #nzIcon>
+                <i class="anticon anticon-solution"></i>
+              </ng-template>
+            </nz-step>
+            <nz-step [nzTitle]="'Pay'" [nzStatus]="'process'">
+              <ng-template #nzIcon>
+                <i class="anticon anticon-credit-card"></i>
+              </ng-template>
+            </nz-step>
+            <nz-step [nzTitle]="'Done'" [nzStatus]="'wait'">
+              <ng-template #nzIcon>
+                <i class="anticon anticon-smile-o"></i>
+              </ng-template>
+            </nz-step>
+          </nz-steps>
+        </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="10">
+    <nz-card>
+      <ng-template #title>竖直方向的步骤条</ng-template>
+      <ng-template #body>
+        <nz-steps [nzDirection]="'vertical'">
+          <nz-step nzTitle="step1" nzDescription="this is description"></nz-step>
+          <nz-step nzTitle="step2" nzDescription="this is description"></nz-step>
+          <nz-step nzTitle="step3" nzDescription="this is description"></nz-step>
+        </nz-steps>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="10">
+    <nz-card>
+      <ng-template #title>数值方向mini步骤条</ng-template>
+      <ng-template #body>
+        <nz-steps [nzDirection]="'vertical'" [nzSize]="'small'">
+          <nz-step nzTitle="step1" nzDescription="this is description"></nz-step>
+          <nz-step nzTitle="step2" nzDescription="this is description"></nz-step>
+          <nz-step nzTitle="step3" nzDescription="this is description"></nz-step>
+        </nz-steps>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="24">
+    <nz-card>
+      <ng-template #title>步骤运行错误</ng-template>
+      <ng-template #body>
+        <nz-steps [nzStatus]="'error'" [(nzCurrent)]="current">
+          <nz-step nzTitle="step1" nzDescription="this is description"></nz-step>
+          <nz-step nzTitle="step2" nzDescription="this is description"></nz-step>
+          <nz-step nzTitle="step3" nzDescription="this is description"></nz-step>
+        </nz-steps>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="24">
+    <nz-card>
+      <ng-template #title>点状步骤条</ng-template>
+      <ng-template #body>
+        <nz-steps nzProgressDot [nzCurrent]="1">
+        <nz-step nzTitle="step1" nzDescription="this is description"></nz-step>
+        <nz-step nzTitle="step2" nzDescription="this is description"></nz-step>
+        <nz-step nzTitle="step3" nzDescription="this is description"></nz-step>
+        </nz-steps>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="24">
+    <nz-card>
+      <ng-template #title>自定义</ng-template>
+      <ng-template #body>
+        <nz-steps [nzCurrent]="2">
+          <nz-step nzTitle="step1"></nz-step>
+          <nz-step nzTitle="step2"></nz-step>
+          <nz-step nzTitle="step3"></nz-step>
+        </nz-steps>
+      </ng-template>
+    </nz-card>
+  </div>
+</div>

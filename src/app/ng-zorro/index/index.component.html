@@ -7,7 +7,7 @@
             <span>邮箱</span>
           </span>
         </li>
-        <li nz-submenu [nzOpen]="true">
+        <li nz-submenu>
           <span title>
             <i class="anticon anticon-setting"></i>
             <span>小部件</span>
@@ -16,22 +16,70 @@
             <li nz-menu-item><a routerLink="btn">按钮</a></li>
             <li nz-menu-item><a routerLink="pageBar">分页</a></li>
             <li nz-menu-item><a routerLink="grid">栅格</a></li>
+            <li nz-menu-item><a routerLink="layout">布局</a></li>
+            <li nz-menu-item><a routerLink="dropdown">下拉菜单</a></li>
+            <li nz-menu-item><a routerLink="steps">步骤条</a></li>
+          </ul>
+        </li>
+        <li nz-submenu [nzOpen]="true">
+          <span title>
+            <i class="anticon anticon-setting"></i>
+            <span>表单</span>
+          </span>
+          <ul>
+            <li nz-menu-item><a routerLink="form-box">表单总览</a></li>
+            <li nz-menu-item><a routerLink="cascade">级联选择</a></li>
+            <li nz-menu-item><a routerLink="checkbox">多选框</a></li>
+            <li nz-menu-item><a routerLink="date-picker">日期选择器</a></li>
+            <li nz-menu-item><a routerLink="input">输入框</a></li>
+            <li nz-menu-item><a routerLink="rate-box">评分</a></li>
+            <li nz-menu-item><a routerLink="radio-box">单选按钮</a></li>
+            <li nz-menu-item><a routerLink="select-box">选择框</a></li>
+            <li nz-menu-item><a routerLink="slider-box">滑动输入条</a></li>
+            <li nz-menu-item><a routerLink="switch-box">开关</a></li>
+            <li nz-menu-item><a routerLink="time-picker">时间选择器</a></li>
+            <li nz-menu-item><a routerLink="transfer-box">穿梭框</a></li>
           </ul>
         </li>
       </ul>
   </nz-sider>
   <nz-layout>
     <nz-header style="background: #fff; padding:0;">
-      <ul nz-menu [nzMode]="'horizontal'">
-        <li nz-menu-item class="trigger"  (click)="isCollapsed=!isCollapsed;mode=!mode">
-          <i class="anticon  anticon-menu-unfold "
-             [class.anticon-menu-fold]="isCollapsed"
-             [class.anticon-menu-unfold]="!isCollapsed"></i>
-        </li>
-        <li nz-menu-item class="trigger">
-          <i class="anticon anticon-search"></i>
-        </li>
-      </ul>
+      <div nz-row>
+        <div nz-col nzSpan="12">
+          <ul nz-menu [nzMode]="'horizontal'">
+            <li nz-menu-item class="trigger"  (click)="isCollapsed=!isCollapsed;mode=!mode">
+              <i class="anticon  anticon-menu-unfold "
+                 [class.anticon-menu-fold]="isCollapsed"
+                 [class.anticon-menu-unfold]="!isCollapsed"></i>
+            </li>
+            <li nz-menu-item class="trigger">
+              <i class="anticon anticon-search"></i>
+            </li>
+          </ul>
+        </div>
+        <div nz-col nzSpan="12">
+          <div style="float: right;padding: 0 20px;">
+            <nz-dropdown nzPlacement="bottomRight">
+              <a  class="trigger" >
+                <i class="anticon anticon-user" nz-dropdown></i>
+              </a>
+              <ul nz-menu>
+                <li nz-menu-item>
+                  <a>个人中心</a>
+                </li>
+                <li nz-menu-item>
+                  <a>修改密码</a>
+                </li>
+                <li nz-menu-divider></li>
+                <li nz-menu-item>
+                  <a>退出登录</a>
+                </li>
+              </ul>
+            </nz-dropdown>
+          </div>
+        </div>
+      </div>
     </nz-header>
     <nz-content style="padding:0 16px; overflow: auto;">
       <nz-breadcrumb style="margin:12px 0;" >
@@ -45,7 +93,7 @@
           {{subTitleName}}
         </nz-breadcrumb-item>
       </nz-breadcrumb>
-      <div style="min-height: 360px;">
+      <div style="min-height: 360px;background: #fff; padding: 24px;">
         <router-outlet  (activate)="onActivate($event)" (deactivate)="onDeactivate($event)"></router-outlet>
       </div>
     </nz-content>

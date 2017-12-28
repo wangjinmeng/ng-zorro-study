@@ -1,0 +1,48 @@
+<nz-card>
+  <ng-template #title>自定义异步校验</ng-template>
+  <ng-template #body>
+    <form nz-form [formGroup]="validateForm">
+      <div nz-row nz-form-item>
+        <div nz-form-label nz-col nzSpan="6">
+          <label nz-form-item-required>用户名称</label>
+        </div>
+        <div nz-form-control nz-col nzSpan="14" nzHasFeedback>
+          <nz-input formControlName="userName"></nz-input>
+        </div>
+      </div>
+      <div nz-row nz-form-item>
+        <div nz-form-label nz-col nzSpan="6">
+          <label nz-form-item-required>电子邮箱</label>
+        </div>
+        <div nz-form-control nz-col nzSpan="14" nzHasFeedback>
+          <nz-input formControlName="email"></nz-input>
+        </div>
+      </div>
+      <div nz-row nz-form-item>
+        <div nz-form-label nz-col nzSpan="6">
+          <label nz-form-item-required>出生日期</label>
+        </div>
+        <div nz-form-control nz-col nzSpan="14" nzHasFeedback>
+          <nz-datepicker formControlName="birthday" style="width: 100%"></nz-datepicker>
+        </div>
+      </div>
+      <div nz-row nz-form-item>
+        <div nz-form-label nz-col nzSpan="6">
+          <label nz-form-item-required>密码</label>
+        </div>
+        <div nz-form-control nz-col nzSpan="14" nzHasFeedback>
+          <nz-input formControlName="password" nzType="password"></nz-input>
+        </div>
+      </div>
+      <div nz-row nz-form-item>
+        <div nz-form-label nz-col nzSpan="6">
+          <label nz-form-item-required>确认密码</label>
+        </div>
+        <div nz-form-control nz-col nzSpan="14" nzHasFeedback>
+          <nz-input formControlName="confirmPassword"></nz-input>
+        </div>
+      </div>
+      <div nz-row nz-form-item></div>
+    </form>
+  </ng-template>
+</nz-card>

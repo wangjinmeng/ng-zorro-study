@@ -1,0 +1,126 @@
+<div nz-row nzType="flex" nzAlign="middle" [nzGutter]="24">
+  <div nz-col nzXs="12" nzMd="8">
+    <nz-card>
+      <ng-template #title>普通用户</ng-template>
+      <ng-template #body>
+        <nz-cascader
+        [nzOptions]="options"
+        [(ngModel)]="_value"
+        (ngModelChange)="_console($event)"
+        (nzChange)="_console($event)"
+        ></nz-cascader>
+        {{_value}}
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzXs="12" nzMd="8">
+    <nz-card>
+      <ng-template #title>自定义显示</ng-template>
+      <ng-template #body>
+        {{_value}}
+        <nz-cascader
+        [nzOptions]="options"
+        [nzShowInput]="false"
+        [(ngModel)]="_value"
+        >
+          <a>click me</a>
+        </nz-cascader>
+
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzXs="12" nzMd="8">
+    <nz-card>
+      <ng-template #title>hover展开子节点</ng-template>
+      <ng-template #body>
+        <nz-cascader
+        [nzOptions]="options"
+        nzExpandTrigger="hover"
+        ></nz-cascader>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzXs="12" nzMd="8">
+    <nz-card>
+      <ng-template #title>禁用选项</ng-template>
+      <ng-template #body>
+        <nz-cascader
+          [nzOptions]="options2"
+        ></nz-cascader>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzXs="12" nzMd="8">
+    <nz-card>
+      <ng-template #title>选中即改变</ng-template>
+      <ng-template #body>
+        <nz-cascader
+          nzExpandTrigger="hover"
+          [nzChangeOnSelect]="true"
+          [nzOptions]="options"
+        ></nz-cascader>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzXs="12" nzMd="8">
+    <nz-card>
+      <ng-template #title>大小</ng-template>
+      <ng-template #body>
+        <nz-cascader [nzOptions]="options" nzSize="small"></nz-cascader>
+        <br>
+        <nz-cascader [nzOptions]="options"></nz-cascader>
+        <br>
+        <nz-cascader [nzOptions]="options" nzSize="large"></nz-cascader>
+
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzXs="12" nzMd="8">
+    <nz-card>
+      <ng-template #title>自定义已选项</ng-template>
+      <ng-template #body>
+        <nz-cascader
+          [nzOptions]="options3"
+          [nzDisplayRender]="_displayRender"
+        ></nz-cascader>
+        <ng-template #rendTpl let-labels="labels" let-selectedOptions="selectedOptions">
+          <ng-container *ngFor="let label of labels;let i=index;let isLast = last">
+            <span *ngIf="!isLast">{{label}}/</span>
+            <span *ngIf="isLast">
+              {{label}}
+            (<a>{{selectedOptions[i].code}}</a>)
+            </span>
+          </ng-container>
+        </ng-template>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzXs="12" nzMd="8">
+    <nz-card>
+      <ng-template #title>动态加载选项</ng-template>
+      <ng-template #body>
+        <nz-cascader
+          (nzLoad)="loadData($event)"
+        ></nz-cascader>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzXs="12" nzMd="8">
+    <nz-card>
+      <ng-template #title>重置</ng-template>
+      <ng-template #body>
+        <form [formGroup]="_form" novalidate>
+          <nz-cascader
+            [nzOptions]="options"
+            (nzChange)="_console($event)"
+            [formControlName]="'name'"
+          ></nz-cascader>
+        </form>
+        <button nz-button (click)="_reset()">重置</button>
+        <p>
+          {{_form.value|json}}
+        </p>
+      </ng-template>
+    </nz-card>
+  </div>
+</div>

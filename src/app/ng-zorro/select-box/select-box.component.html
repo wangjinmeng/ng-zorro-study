@@ -1,0 +1,150 @@
+<div nz-row nzType="flex" [nzGutter]="24" nzAlign="middle">
+  <div nz-col nzSm="12" nzMd="6">
+    <nz-card>
+      <ng-template #title>基本用法</ng-template>
+      <ng-template #body>
+        <nz-select [(ngModel)]="selectValue" nzAllowClear style="width: 50%" nzPlaceHolder="可删除的下拉框">
+          <nz-option
+            *ngFor="let option of options"
+            [nzLabel]="option.label"
+            [nzValue]="option.value"
+            [nzDisabled]="option.disabled"
+          ></nz-option>
+        </nz-select>
+        <nz-select [(ngModel)]="selectValue" nzDisabled>
+          <nz-option
+            *ngFor="let option of options"
+            [nzLabel]="option.label"
+            [nzValue]="option.value"
+            [nzDisabled]="option.disabled"
+          ></nz-option>
+        </nz-select>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSm="12" nzMd="6">
+    <nz-card>
+      <ng-template #title>三种尺寸</ng-template>
+      <ng-template #body>
+        <nz-select nzSize="large" [(ngModel)]="selectValue" style="width: 100%">
+          <nz-option
+          *ngFor="let option of options"
+          [nzLabel]="option.label"
+          [nzValue]="option.value"
+          [nzDisabled]="option.disabled"
+          ></nz-option>
+        </nz-select>
+        <br>
+        <br>
+        <nz-select [(ngModel)]="selectValue" style="width: 100%">
+          <nz-option
+            *ngFor="let option of options"
+            [nzLabel]="option.label"
+            [nzValue]="option.value"
+            [nzDisabled]="option.disabled"
+          ></nz-option>
+        </nz-select>
+        <br>
+        <br>
+        <nz-select nzSize="small" [(ngModel)]="selectValue" style="width: 100%">
+          <nz-option
+            *ngFor="let option of options"
+            [nzLabel]="option.label"
+            [nzValue]="option.value"
+            [nzDisabled]="option.disabled"
+          ></nz-option>
+        </nz-select>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSm="12" nzMd="6">
+    <nz-card>
+      <ng-template #title>搜索框</ng-template>
+      <ng-template #body>
+        <nz-select nzSize="small" [(ngModel)]="selectValue" style="width: 100%" nzShowSearch>
+          <nz-option
+            *ngFor="let option of options"
+            [nzLabel]="option.label"
+            [nzValue]="option.value"
+            [nzDisabled]="option.disabled"
+          ></nz-option>
+        </nz-select>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSm="12" nzMd="6">
+    <nz-card>
+      <ng-template #title>多选</ng-template>
+      <ng-template #body>
+        <nz-select [(ngModel)]="selectMultipleValue" [nzMode]="'multiple'" style="width: 100%;">
+          <nz-option
+            *ngFor="let option of options"
+            [nzLabel]="option.label"
+            [nzValue]="option.value"
+            [nzDisabled]="option.disabled"
+          ></nz-option>
+        </nz-select>
+        {{selectMultipleValue}}
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSm="12" nzMd="6">
+    <nz-card>
+      <ng-template #title>标签</ng-template>
+      <ng-template #body></ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSm="12" nzMd="6">
+    <nz-card>
+      <ng-template #title>下拉模板</ng-template>
+      <ng-template #body>
+        <nz-select style="width: 100px;">
+          <nz-option *ngFor="let option of options" [nzLabel]="option.label" [nzValue]="option.value">
+            <ng-template #nzOptionTemplate>
+              <i class="anticon anticon-setting"></i>
+              {{option.value}}
+            </ng-template>
+          </nz-option>
+        </nz-select>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSm="12" nzMd="6">
+    <nz-card>
+      <ng-template #title>滚动加载</ng-template>
+      <ng-template #body >
+        <nz-select style="width: 100px;" (nzScrollToBottom)="scrollToBottom()">
+          <nz-option
+            *ngFor="let option of loadOptions"
+            [nzLabel]="option.label"
+            [nzValue]="option.value">
+          </nz-option>
+          <nz-option [nzLabel]="'disabled'" [nzDisabled]="true" [nzValue]="'disabled'" *ngIf="loading">
+            <ng-template #nzOptionTemplate>
+              <i class="anticon anticon-loading anticon-spin"></i> Loading...
+            </ng-template>
+          </nz-option>
+        </nz-select>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSm="24" nzMd="24">
+    <nz-card>
+      <ng-template #title>多选搜索框</ng-template>
+      <ng-template #body>
+        <nz-select
+          style="width: 400px"
+          nzMode="multiple"
+          [nzPlaceHolder]="'请输入关键字进行搜索。。。'"
+          (nzSearchChange)="searchChange($event)"
+        >
+          <nz-option
+            *ngFor="let option of searchOptions"
+            [nzLabel]="option[0]"
+            [nzValue]="option[0]"
+          ></nz-option>
+        </nz-select>
+      </ng-template>
+    </nz-card>
+  </div>
+</div>

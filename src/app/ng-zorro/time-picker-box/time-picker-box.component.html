@@ -1,0 +1,75 @@
+<div nz-row [nzGutter]="24" nzType="flex" nzAlign="middle">
+  <div nz-col nzSpan="8">
+    <nz-card>
+      <ng-template #title>基本用法</ng-template>
+      <ng-template #body>
+        <nz-timepicker [(ngModel)]="_data"></nz-timepicker>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="8">
+    <nz-card>
+      <ng-template #title>受控组件</ng-template>
+      <ng-template #body>
+        <nz-timepicker [(ngModel)]="_data" (ngModelChange)="_console($event)"></nz-timepicker>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="8">
+    <nz-card>
+      <ng-template #title>三种大小</ng-template>
+      <ng-template #body>
+        <nz-timepicker nzSize="large"></nz-timepicker>
+        <br>
+        <br>
+        <nz-timepicker></nz-timepicker>
+        <br>
+        <br>
+        <nz-timepicker nzSize="small"></nz-timepicker>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="8">
+    <nz-card>
+      <ng-template #title>不展示秒</ng-template>
+      <ng-template #body>
+        <nz-timepicker nzFormat="HH:mm" [(ngModel)]="_data"></nz-timepicker>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="8">
+    <nz-card>
+      <ng-template #title>禁用</ng-template>
+      <ng-template #body>
+        <nz-timepicker nzDisabled [(ngModel)]="_data"></nz-timepicker>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="8">
+    <nz-card>
+      <ng-template #title>禁用选项</ng-template>
+      <ng-template #body>
+        <nz-timepicker
+          [(ngModel)]="_data"
+          nzFormat="HH:mm"
+          [nzDisabledHours]="disabledHours"
+          [nzDisabledMinutes]="disabledMinutes"
+        ></nz-timepicker>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="8">
+    <nz-card>
+      <ng-template #title>只显示部分选项</ng-template>
+      <ng-template #body>
+        <nz-timepicker
+          [(ngModel)]="_data"
+          nzFormat="HH:mm"
+          [nzDisabledHours]="disabledHours"
+          [nzDisabledMinutes]="disabledMinutes"
+          nzHideDisabledOptions
+        ></nz-timepicker>
+      </ng-template>
+    </nz-card>
+  </div>
+</div>

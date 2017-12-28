@@ -1,0 +1,102 @@
+<div nz-row [nzGutter]="24">
+  <div nz-col nzXs="12" nzMd="8">
+    <nz-card>
+      <ng-template #title>普通用法</ng-template>
+      <ng-template #body>
+        <nz-slider [nzDefaultValue]="30" [nzDisabled]="disabledState"></nz-slider>
+        <nz-slider [nzRange]="true" [nzDisabled]="disabledState"></nz-slider>
+        <div>
+          disabled:
+          <nz-switch nzSize="small" [(ngModel)]="disabledState"></nz-switch>
+        </div>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzXs="12" nzMd="8">
+    <nz-card>
+      <ng-template #title>带输入框的滑块</ng-template>
+      <ng-template #body>
+        <nz-row>
+          <nz-col nzSpan="12">
+            <nz-slider [nzMin]="1" [nzMax]="20" [(ngModel)]="value1" [nzDefaultValue]="value1"></nz-slider>
+          </nz-col>
+          <div nz-col nzSpan="4">
+            <nz-input-number [nzMin]="1" [nzMax]="20" [ngStyle]="{ 'marginLeft': '16px' }" [(ngModel)]="value1"></nz-input-number>
+          </div>
+        </nz-row>
+
+        <nz-row>
+          <nz-col nzSpan="12">
+            <nz-slider [nzMin]="0" [nzMax]="1" [nzStep]="0.1" [(ngModel)]="value2"  [nzDefaultValue]="value2"></nz-slider>
+          </nz-col>
+          <nz-col nzSpan="4">
+            <nz-input-number [nzMin]="0" [nzMax]="1" [ngStyle]="{ marginLeft: '16px' }" [nzStep]="0.1" [(ngModel)]="value2"></nz-input-number>
+          </nz-col>
+        </nz-row>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzXs="12" nzMd="8">
+    <nz-card>
+      <ng-template #title>带icon的滑块</ng-template>
+      <ng-template #body>
+        <div class="icon-wrapper test-class">
+          <i [ngClass]="iconLeftClass"></i>
+          <nz-slider [nzMin]="0" [nzMax]="20" [(ngModel)]="iconSliderValue" [nzDefaultValue]="iconSliderValue" (ngModelChange)="iconSliderChange($event)"></nz-slider>
+          <i [ngClass]="iconRightClass"></i>
+        </div>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzXs="12" nzMd="8">
+    <nz-card>
+      <ng-template #title>自定义提示</ng-template>
+      <ng-template #body>
+        <nz-slider [nzTipFormatter]="formatter"></nz-slider>
+        <nz-slider [nzTipFormatter]="null"></nz-slider>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzXs="12" nzMd="8">
+    <nz-card>
+      <ng-template #title>事件</ng-template>
+      <ng-template #body>
+        <nz-slider (nzOnAfterChange)="_console($event)" (nzModelChange)="_console($event)"></nz-slider>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzXs="12" nzMd="8">
+    <nz-card>
+      <ng-template #title>带标签的滑块</ng-template>
+      <ng-template #body>
+        <nz-slider [nzMarks]="marks"></nz-slider>
+        <nz-slider [nzMarks]="marks" nzRange></nz-slider>
+        <h4>included=false</h4>
+        <nz-slider [nzMarks]="marks" [nzIncluded]="false"></nz-slider>
+        <h4>marks&steps</h4>
+        <nz-slider [nzMarks]="marks" [nzStep]="10"></nz-slider>
+        <h4>steps=null||nzDots</h4>
+        <nz-slider [nzMarks]="marks" [nzStep]="null"></nz-slider>
+        <nz-slider [nzMarks]="marks" nzDots></nz-slider>
+      </ng-template>
+    </nz-card>
+  </div>
+  <div nz-col nzXs="12" nzMd="8">
+    <nz-card>
+      <ng-template #title>垂直滑块</ng-template>
+      <ng-template #body>
+        <div [ngStyle]="{ height: '300px' }">
+          <div style="float:left;height:300px;margin-left:70px">
+            <nz-slider [nzMarks]="marks" nzVertical></nz-slider>
+          </div>
+          <div style="float:left;height:300px;margin-left:70px">
+            <nz-slider [nzMarks]="marks" nzRange nzVertical></nz-slider>
+          </div>
+          <div style="float:left;height:300px;margin-left:70px">
+            <nz-slider [nzMarks]="marks" [nzIncluded]="false" nzVertical></nz-slider>
+          </div>
+        </div>
+      </ng-template>
+    </nz-card>
+  </div>
+</div>
